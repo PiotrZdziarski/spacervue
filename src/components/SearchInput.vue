@@ -2,6 +2,7 @@
     <input
         id="search"
         name="search"
+        :class="{ dark }"
         :value="value"
         @input="handleChange"
     />
@@ -14,6 +15,10 @@
             value: {
                 type: String,
                 required: true,
+            },
+            dark: {
+                type: Boolean,
+                default: false,
             },
         },
         methods: {
@@ -52,5 +57,13 @@
 
     label {
         font-family: Montserrat, sans-serif;
+    }
+    .dark {
+        color: #1e3d4a;
+        border-bottom-color: #1e3d4a;
+    }
+
+    .dark:focus {
+        box-shadow: 0 5px 10px -3px rgba(#1e3d4a, .5);
     }
 </style>
